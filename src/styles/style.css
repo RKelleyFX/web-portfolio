@@ -1,0 +1,65 @@
+.grid {
+    width: auto;
+}
+
+/* Navbar */
+
+#navBar {
+    margin: 10px;
+    max-width: auto;
+    height: 80px;
+    background-color: lightgray;
+    border-style: solid;
+    border-color: slategray;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 4px black;
+}
+
+#mngLogoNav {
+    width: 300px;
+    margin-top: -10px;
+}
+
+#mngLogoNav:hover {
+    cursor: pointer;
+    width: 320px;
+}
+
+#navMenu {
+    height: 50px;
+    width: 200px;
+    margin: 5px;
+    float: right;
+}
+
+#menuLink {
+    float: left;
+    color: rgb(150, 90, 0);
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+#menuLink:hover {
+    cursor: pointer;
+    color: rgb(185, 121, 0);
+}
+
+#navLogo {
+    height: 50px;
+    width: 500px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#navMid {
+    height: 50px;
+    width: 500px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
