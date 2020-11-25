@@ -1,6 +1,6 @@
 /* App.js Primary Bady Styling */
 body {
-    background-color: grey;
+    background-color: rgb(252, 241, 235);
     background-position: center;
     background-size: 150em;
 }
@@ -13,7 +13,7 @@ body {
     margin-bottom: 20px;
     margin-left: 15px;
     margin-right: 15px;
-    background-color: lightgrey;
+    background-color: rgb(252, 241, 235);
     border-style: solid;
     border-radius: 5px;
     border-color: orange;

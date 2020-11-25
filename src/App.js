@@ -5,11 +5,11 @@ import React, { Component } from 'react';
 
 // Page Imports
 import Home from './pages/Home';
-import Fabrication from './pages/Fabrication';
-import FilmTv from './pages/Film-Tv';
-import Management from './pages/Management';
-import Volunteer from './pages/Volunteer';
-import WebDev from './pages/Web-Dev';
+import Make from './pages/Make';
+import Manage from './pages/Manage';
+import Design from './pages/Design';
+import Steam from './pages/Steam';
+import About from './pages/About';
 
 // Routing Imports
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -28,11 +28,11 @@ class App extends Component {
                             <div>
                                 <Switch>
                                     <Route exact path="/" component={Home} />
-                                    <Route path="/fabrication" component={Fabrication} />
-                                    <Route path="/film-tv" component={FilmTv} />
-                                    <Route path="/management" component={Management} />
-                                    <Route path="/volunteer" component={Volunteer} />
-                                    <Route path="/web-dev" component={WebDev} />
+                                    <Route path="/make" component={Make} />
+                                    <Route path="/manage" component={Manage} />
+                                    <Route path="/design" component={Design} />
+                                    <Route path="/steam" component={Steam} />
+                                    <Route path="/about" component={About} />
                                 </Switch>
                             </div>
                     </Router>

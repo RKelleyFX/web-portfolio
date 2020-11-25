@@ -10,16 +10,16 @@ class NaviBar extends Component {
         return (
             <div>
                 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                    <Navbar.Brand href="/">Ryan Kelley</Navbar.Brand>
+                    <Navbar.Brand href="/">Old Forge Maker</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
-                            <Nav.Link href="/web-dev">Web Development</Nav.Link>
-                            <Nav.Link href="/management">Management</Nav.Link>
-                            <Nav.Link href="/volunteer">Volunteer</Nav.Link>
-                            <NavDropdown title="Fabrication" id="collasible-nav-dropdown">
-                                <NavDropdown.Item href="/film-tv">Film and Television</NavDropdown.Item>
-                                <NavDropdown.Item href="/fabrication">General</NavDropdown.Item>
+                            <Nav.Link href="/make">Making</Nav.Link>
+                            <Nav.Link href="/manage">Doing</Nav.Link>
+                            <Nav.Link href="/design">Designing</Nav.Link>
+                            <NavDropdown title="Growing" id="collasible-nav-dropdown">
+                                <NavDropdown.Item href="/steam">The Future - STEAM</NavDropdown.Item>
+                                <NavDropdown.Item href="/about">About Me</NavDropdown.Item>
                             </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>

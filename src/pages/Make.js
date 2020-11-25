@@ -6,7 +6,7 @@ import NaviBar from '../components/Navbar';
 import { useSelector, useDispatch } from 'react-redux';
 import { NAVI_LOCATION } from '../actions/actions';
 
-class Fabrication extends Component {
+class Make extends Component {
   constructor (props) {
     super(props)
     //this.state = { value: false }
@@ -27,11 +27,14 @@ class Fabrication extends Component {
     return (
       <div>
         <NaviBar />
-        <h2>Fabrication</h2>
+        <h2>Making</h2>
+        <h5>Magic Castle</h5>
+        <h5>Farie Doors</h5>
+        <h5>Space Selfie</h5>
         {/*<h5>{name}</h5>*/}
       </div>
     )
   }
 };
 
-export default Fabrication;
+export default Make;

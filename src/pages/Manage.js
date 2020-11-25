@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import NaviBar from '../components/Navbar';
 
-class Management extends Component {
+class Manage extends Component {
   constructor (props) {
     super(props)
     //this.state = { value: false }
@@ -17,10 +17,14 @@ class Management extends Component {
     return (
       <div>
         <NaviBar />
-        <h2>Management</h2>
+        <h2>Doing</h2>
+        <h5>Project Management</h5>
+        <h5>Full Scale Effects</h5>
+        <h5>Special Effects Coordinator</h5>
       </div>
     )
   }
+  
 };
 
-export default Management;
+export default Manage;

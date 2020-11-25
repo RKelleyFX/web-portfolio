@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import NaviBar from '../components/Navbar';
 
-class Volunteer extends Component {
+class Design extends Component {
   constructor (props) {
     super(props)
     //this.state = { value: false }
@@ -17,10 +17,13 @@ class Volunteer extends Component {
     return (
       <div>
         <NaviBar />
-        <h2>Volunteer</h2>
+        <h2>Designing</h2>
+        <h5>CAD Design</h5>
+        <h5>Web Development</h5>
+        <h5>Special Effects Technician</h5>
       </div>
     )
   }
 };
 
-export default Volunteer;
+export default Design;

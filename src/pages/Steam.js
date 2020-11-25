@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import NaviBar from '../components/Navbar';
 
-class WebDev extends Component {
+class Steam extends Component {
   constructor (props) {
     super(props)
     //this.state = { value: false }
@@ -17,10 +17,12 @@ class WebDev extends Component {
     return (
       <div>
         <NaviBar />
-        <h2>Web Development</h2>
+        <h2>The Future - STEAM</h2>
+        <h5>Continuing Education</h5>
+        <h5>STEAM</h5>
       </div>
     )
   }
 };
 
-export default WebDev;
+export default Steam;
