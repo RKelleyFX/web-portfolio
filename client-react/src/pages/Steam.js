@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import NaviBar from '../components/Navbar';
+import PageIntro from '../components/PageIntro';
 
 class Steam extends Component {
   constructor (props) {
@@ -18,8 +19,9 @@ class Steam extends Component {
       <div>
         <NaviBar />
         <h2>The Future - STEAM</h2>
-        <h5>Continuing Education</h5>
-        <h5>STEAM</h5>
+        <PageIntro />
+        {/*<h5>Continuing Education</h5>
+        <h5>STEAM</h5>*/}
       </div>
     )
   }

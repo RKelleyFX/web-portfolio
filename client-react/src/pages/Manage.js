@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import NaviBar from '../components/Navbar';
+import PageIntro from '../components/PageIntro';
 
 class Manage extends Component {
   constructor (props) {
@@ -18,9 +19,10 @@ class Manage extends Component {
       <div>
         <NaviBar />
         <h2>Doing</h2>
-        <h5>Project Management</h5>
+        <PageIntro />
+        {/*<h5>Project Management</h5>
         <h5>Full Scale Effects</h5>
-        <h5>Special Effects Coordinator</h5>
+        <h5>Special Effects Coordinator</h5>*/}
       </div>
     )
   }

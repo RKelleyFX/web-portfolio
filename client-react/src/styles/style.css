@@ -2,64 +2,42 @@
     width: auto;
 }
 
-/* Navbar 
-
-#navBar {
-    margin: 10px;
-    max-width: auto;
-    height: 80px;
-    background-color: lightgray;
-    border-style: solid;
-    border-color: slategray;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px 4px black;
+#pageHeader {
+    text-align: center;
 }
 
-#mngLogoNav {
+#pageIcon {
+    height: 100px;
+    width: 100px;
+}
+
+#pageText {
+    width: 40%;
+}
+
+#welcomeText {
+    width: 60%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.siderIcon {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end
+}
+
+#headShot {
+    height: 300px;
     width: 300px;
-    margin-top: -10px;
+    margin: 20px 20px 20px 20px;
 }
 
-#mngLogoNav:hover {
-    cursor: pointer;
-    width: 320px;
-}
-
-#navMenu {
+#contactIcon {
     height: 50px;
-    width: 200px;
-    margin: 5px;
-    float: right;
+    width: 50px;
 }
-
-#menuLink {
-    float: left;
-    color: rgb(150, 90, 0);
-    margin-top: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
-    font-size: 20px;
-}
-
-#menuLink:hover {
-    cursor: pointer;
-    color: rgb(185, 121, 0);
-}
-
-#navLogo {
-    height: 50px;
-    width: 500px;
-    margin-bottom: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-#navMid {
-    height: 50px;
-    width: 500px;
-    margin-top: 0px;
-    margin-bottom: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-*/

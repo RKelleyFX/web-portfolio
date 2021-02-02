@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import NaviBar from '../components/Navbar';
+import PageIntro from '../components/PageIntro';
 
 class Design extends Component {
   constructor (props) {
@@ -18,9 +19,10 @@ class Design extends Component {
       <div>
         <NaviBar />
         <h2>Designing</h2>
-        <h5>CAD Design</h5>
+        <PageIntro />
+        {/*<h5>CAD Design</h5>
         <h5>Web Development</h5>
-        <h5>Special Effects Technician</h5>
+        <h5>Special Effects Technician</h5>*/}
       </div>
     )
   }

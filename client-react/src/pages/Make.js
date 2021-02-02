@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import NaviBar from '../components/Navbar';
+import PageIntro from '../components/PageIntro';
+import PostView from '../components/PostView';
 
 // Redux Imports
 import { useSelector, useDispatch } from 'react-redux';
@@ -28,9 +30,11 @@ class Make extends Component {
       <div>
         <NaviBar />
         <h2>Making</h2>
-        <h5>Magic Castle</h5>
+        <PageIntro />
+        <PostView />
+        {/*<h5>Magic Castle</h5>
         <h5>Farie Doors</h5>
-        <h5>Space Selfie</h5>
+        <h5>Space Selfie</h5>*/}
         {/*<h5>{name}</h5>*/}
       </div>
     )

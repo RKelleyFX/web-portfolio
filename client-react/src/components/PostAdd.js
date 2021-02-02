@@ -28,15 +28,27 @@ class PostAdd extends Component {
             <Form.Label>Post Body</Form.Label>
             <Form.Control as="textarea" rows="3" />
           </Form.Group>
+          <Form.Group controlId="exampleForm.ControlTextarea2">
+            <Form.Label>Keywords</Form.Label>
+            <Form.Control as="textarea" rows="1" />
+          </Form.Group>
           <Form.Group controlId="exampleForm.ControlSelect1">
             <Form.Label>Post Location</Form.Label>
-            <Form.Control as="select"  ref={this.priority}>
+            <Form.Control as="select"  ref={this.pageLocation}>
               <option value={1}>Making</option>
               <option value={2}>Doing</option>
               <option value={3}>Designing</option>
               <option value={4}>The Future</option>
               <option value={5}>About Me</option>
             </Form.Control>
+          </Form.Group>
+          <Form.Group controlId="exampleForm.ControlCheckbox1">
+            <Form.Label>Featured Post</Form.Label>
+            <Form.Check type="checkbox" />
+          </Form.Group>
+          <Form.Group controlId="exampleForm.ControlFile1">
+            <Form.Label>Upload File</Form.Label>
+            <Form.File as="file" />
           </Form.Group>
           <Button variant="primary">
             Submit Post
