@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
+import GoG from '../assets/icons/GoGBlindfoldSS.png';
+
 class PostAdd extends Component {
     constructor(props) {
         super(props)
@@ -17,7 +19,7 @@ class PostAdd extends Component {
     render() {
         return (
             <Card className="text-center" style={{ width: '24rem' }}>
-                <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+                <Card.Img variant="top" src={GoG} />
                 <Card.Body>
                     <Card.Title>Post Title</Card.Title>
                     <Card.Text>

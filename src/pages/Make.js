@@ -29,13 +29,15 @@ class Make extends Component {
     return (
       <div>
         <NaviBar />
-        <h2>Making</h2>
-        <PageIntro />
-        <PostView />
-        {/*<h5>Magic Castle</h5>
-        <h5>Farie Doors</h5>
-        <h5>Space Selfie</h5>*/}
-        {/*<h5>{name}</h5>*/}
+        <div className='container'>
+          <h2>Making</h2>
+          <PageIntro />
+          <PostView />
+          {/*<h5>Magic Castle</h5>
+          <h5>Farie Doors</h5>
+          <h5>Space Selfie</h5>*/}
+          {/*<h5>{name}</h5>*/}
+        </div>
       </div>
     )
   }
