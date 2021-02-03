@@ -1,0 +1,44 @@
+.grid {
+    width: auto;
+}
+
+#pageHeader {
+    text-align: center;
+}
+
+#pageIcon {
+    height: 100px;
+    width: 100px;
+}
+
+#pageText {
+    width: 40%;
+}
+
+#welcomeText {
+    width: 60%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.siderIcon {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 15px;
+}
+
+#headShot {
+    height: 300px;
+    width: 300px;
+    margin: 20px 20px 20px 20px;
+}
+
+#contactIcon {
+    height: 50px;
+    width: 50px;
+}
