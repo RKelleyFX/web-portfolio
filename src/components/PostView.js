@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import Button from 'react-bootstrap/Button';
+
 import Card from 'react-bootstrap/Card';
 
-import GoG from '../assets/icons/GoGBlindfoldSS.png';
+import GoG from '../assets/images/GoGBlindfoldSS.png';
 
 class PostAdd extends Component {
     constructor(props) {
