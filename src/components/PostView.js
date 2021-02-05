@@ -18,7 +18,7 @@ class PostAdd extends Component {
 
     render() {
         return (
-            <Card className="text-center" style={{ width: '24rem' }}>
+            <Card className="text-center" style={{ width: '75%' }}>
                 <Card.Img variant="top" src={GoG} />
                 <Card.Body>
                     <Card.Title>Post Title</Card.Title>

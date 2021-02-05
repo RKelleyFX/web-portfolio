@@ -2,6 +2,67 @@
     width: auto;
 }
 
+/* Page Styling*/
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Data Pages */
+
+.main-column {
+    flex: 70%;
+    padding: 15px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.side-column {
+    flex: 30%;
+    padding: 10px;
+}
+
+/* Home and About Pages */
+
+.center-column {
+    flex: 60%;
+    padding: 15px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.left-column {
+    flex: 15%;
+    padding: 10px;
+}
+
+.right-column {
+    flex: 15%;
+    padding: 10px;
+}
+
+/*Responsive containers*/
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+    min-width: 800px;
+  }
+  
+  /* Responsive layout - makes a one column layout instead of a two-column layout */
+  @media (max-width: 800px) {
+    .flex-container {
+      flex-direction: column;
+    }
+  }
+
+/* Component Specific Styling */
+
+/* Element Styling */
+
 #pageHeader {
     text-align: center;
 }
@@ -12,22 +73,16 @@
 }
 
 #pageText {
-    width: 40%;
+    margin: 20px;
 }
 
 #welcomeText {
-    width: 60%;
+    margin: 20px;
 }
 
-.container {
+#siderIcon {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.siderIcon {
-    display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
     align-items: flex-end;
     margin: 15px;
 }

@@ -3,15 +3,15 @@ import React, { Component } from 'react';
 // material UI components
 //import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
-// Page Imports
-import Home from './pages/Home';
-import Make from './pages/Make';
-import Manage from './pages/Manage';
-import Design from './pages/Design';
-import Steam from './pages/Steam';
-import About from './pages/About';
-import LogIn from './pages/LogIn';
-import Admin from './pages/Admin';
+// Screen Imports
+import Home from './screens/Home';
+import Make from './screens/Make';
+import Manage from './screens/Manage';
+import Design from './screens/Design';
+import Steam from './screens/Steam';
+import About from './screens/About';
+import LogIn from './screens/LogIn';
+import Admin from './screens/Admin';
 
 // Routing Imports
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
