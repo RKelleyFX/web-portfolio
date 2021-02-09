@@ -10,7 +10,6 @@ import Manage from './screens/Manage';
 import Design from './screens/Design';
 import Steam from './screens/Steam';
 import About from './screens/About';
-import LogIn from './screens/LogIn';
 import Admin from './screens/Admin';
 
 // Routing Imports
@@ -35,7 +34,6 @@ class App extends Component {
                                     <Route path="/design" component={Design} />
                                     <Route path="/steam" component={Steam} />
                                     <Route path="/about" component={About} />
-                                    <Route path="/logIn" component={LogIn} />
                                     <Route path="/admin" component={Admin} />
                                 </Switch>
                             </div>

@@ -29,6 +29,7 @@ class Design extends Component {
           <div className='center-column'>
             <h2>Designing</h2>
             <PageIntro />
+            <div className='container'>
             <Card className="text-center" style={{ width: '45%' }}>
               <Card.Img variant="top" src={WFHome} />
               <Card.Img variant="top" src={WFContact} />
@@ -42,6 +43,7 @@ class Design extends Component {
                 <Card.Link href="#">Another Link</Card.Link>
               </Card.Body>
             </Card>
+            </div>
             {/*<h5>CAD Design</h5>
         <h5>Web Development</h5>
         <h5>Special Effects Technician</h5>*/}

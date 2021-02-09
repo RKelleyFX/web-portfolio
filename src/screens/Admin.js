@@ -26,10 +26,12 @@ class Admin extends Component {
           <div className='left-column'></div>
           <div className='center-column'>
             <h2>Administration</h2>
-            <PostAdd />
-            <ContactTable />
-            <PageIntroMod />
-            <PostTable />
+            <div className='container'>
+              <PostAdd /> 
+              <ContactTable />
+              <PageIntroMod />
+              <PostTable />
+            </div>
           </div>
           <div className='right-column'></div>
         </div>
