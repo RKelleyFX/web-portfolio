@@ -51,25 +51,25 @@ class PostAdd extends Component {
                     <div className='post-content'>
                         {/*<img id='post-img' src={GoG} />*/}
 
-                        <div class="slideshow-container">
+                        <div className="slideshow-container">
 
-                            <div class="mySlides fade">
-                                <div class="numbertext">1 / 3</div>
+                            <div className="mySlides fade">
+                                <div className="numbertext">1 / 3</div>
                                 <img id='post-img' src={WFHome} />
                             </div>
 
-                            <div class="mySlides fade">
-                                <div class="numbertext">2 / 3</div>
+                            <div className="mySlides fade">
+                                <div className="numbertext">2 / 3</div>
                                 <img id='post-img' src={WFContact} />
                             </div>
 
-                            <div class="mySlides fade">
-                                <div class="numbertext">3 / 3</div>
+                            <div className="mySlides fade">
+                                <div className="numbertext">3 / 3</div>
                                 <img id='post-img' src={WFAdmin} />
                             </div>
 
-                            <a class="prev" onclick={this.plusSlides(-1)}>&#10094;</a>
-                            <a class="next" onclick={this.plusSlides(1)}>&#10095;</a>
+                            <a className="prev" onClick={this.plusSlides(-1)}>&#10094;</a>
+                            <a className="next" onClick={this.plusSlides(1)}>&#10095;</a>
                         </div>
 
                     </div>
