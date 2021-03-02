@@ -27,7 +27,7 @@ class Admin extends Component {
           <div className='center-column'>
             <h2>Administration</h2>
             <div className='container'>
-              {/*<PostAdd />*/} 
+              <PostAdd /> 
               <ContactTable />
               <PageIntroMod />
               <PostTable />

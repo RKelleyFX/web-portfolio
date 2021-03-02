@@ -78,10 +78,10 @@ class PostAdd extends Component {
           <Form.Group controlId="exampleForm.ControlSelect1">
             <Form.Label>Post Location</Form.Label>
             <Form.Control as="select"  ref={this.postLoc}>
-              <option value={"making"}>Making</option>
-              <option value={"doing"}>Doing</option>
-              <option value={"designing"}>Designing</option>
-              <option value={"future"}>The Future</option>
+              <option value={"make"}>Making</option>
+              <option value={"manage"}>Doing</option>
+              <option value={"design"}>Designing</option>
+              <option value={"steam"}>The Future / STEAM</option>
               <option value={"about"}>About Me</option>
             </Form.Control>
           </Form.Group>

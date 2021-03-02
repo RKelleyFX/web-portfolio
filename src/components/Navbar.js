@@ -1,12 +1,12 @@
 // Necessary Imports
-import React, { Component } from 'react';
+import React from 'react';
 
 // Routing Imports
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 
-class NaviBar extends Component {
 
-    render() {
+const NaviBar = () => {
+   
         return (
             <div>
                 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -26,7 +26,7 @@ class NaviBar extends Component {
                 </Navbar>
             </div>
         );
-    }
+    
 }
 
 export default NaviBar;

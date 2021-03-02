@@ -1,32 +1,28 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+
 
 import NaviBar from '../components/Navbar';
 
 import PageIntro from '../components/PageIntro';
-import PostView from '../components/PostView';
+import PostList from '../components/PostList';
 
 // Redux Imports
-import { useSelector, useDispatch } from 'react-redux';
-import { NAVI_LOCATION } from '../actions/actions';
+import { useSelector, useDispatch, connect } from 'react-redux';
+import { NAVI_LOCATION } from '../actions/actions'; 
 
 class Make extends Component {
   constructor(props) {
     super(props)
-    //this.state = { value: false }
+    this.state = { pageId: "make" }
     //this.newTicketQuery = this.newTicketQuery.bind(this)
   }
 
   componentDidMount() {
-    this.setNaviState();
+    
   }
 
-  setNaviState() {
-    //useDispatch({ type: NAVI_LOCATION, payload: 'fabrication' })
-  };
 
   render() {
-    //const name = useSelector(state => state.navPage);
-
     return (
       <div>
         <NaviBar />
@@ -36,12 +32,12 @@ class Make extends Component {
           </div>
           <div className='center-column'>
             <h2>Making</h2>
-            <PageIntro />
-            <PostView />
+            <PageIntro pageId={this.state.pageId}/>
+            <PostList pageId={this.state.pageId}/>
             {/*<h5>Magic Castle</h5>
           <h5>Farie Doors</h5>
-          <h5>Space Selfie</h5>*/}
-            {/*<h5>{name}</h5>*/}
+          <h5>Space Selfie</h5>
+            <h5>{name}</h5>*/}
           </div>
           <div className='right-column'>
             <p></p>

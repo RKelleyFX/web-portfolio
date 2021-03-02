@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 
 import GoG from '../assets/images/GoGBlindfoldSS.png';
-import WFAdmin from '../assets/images/WFAdmin.png';
-import WFContact from '../assets/images/WFContact.png';
-import WFHome from '../assets/images/WFHome.png';
 
 import '../styles/style.css';
 
@@ -15,65 +12,24 @@ class PostAdd extends Component {
     }
 
     componentDidMount() {
-        //this.showSlides(this.state.slideIndex);
-    }
-    
-    plusSlides (n) {
-        //this.showSlides(this.state.slideIndex += n);
+        
     }
 
-    currentSlide(n) {
-        //this.showSlides(this.state.slideIndex = n);
-    }
-    /*
-    showSlides(n) {
-        var i;
-        this.setState.slideIndex = n;
-        var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("dot");
-        if (n > slides.length) {this.setState.slideIndex = 1}
-        if (n < 1) {this.state.slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[this.state.slideIndex-1].style.display = "block";
-        dots[this.state.slideIndex-1].className += " active";
-      }
-    */
     render() {
         return (
-
+            
             <div className='post-card'>
                 <div className='post-header'>
                     <div className='post-content'>
-                        {/*<img id='post-img' src={GoG} />*/}
 
                         <div className="slideshow-container">
 
-                            <div className="mySlides fade">
-                                <div className="numbertext">1 / 3</div>
-                                <img id='post-img' src={WFHome} />
-                            </div>
-
-                            <div className="mySlides fade">
-                                <div className="numbertext">2 / 3</div>
-                                <img id='post-img' src={WFContact} />
-                            </div>
-
-                            <div className="mySlides fade">
-                                <div className="numbertext">3 / 3</div>
-                                <img id='post-img' src={WFAdmin} />
-                            </div>
-
-                            <a className="prev" onClick={this.plusSlides(-1)}>&#10094;</a>
-                            <a className="next" onClick={this.plusSlides(1)}>&#10095;</a>
+                            <img id='post-img' src={GoG} />
+                            
                         </div>
 
                     </div>
-
+                    
                     <div className='post-content'>
                         <div id='post-title'>
                             <h3>Post Title</h3>
