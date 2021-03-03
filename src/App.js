@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 
-// material UI components
-//import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-
 // Screen Imports
 import Home from './screens/Home';
 import Make from './screens/Make';
@@ -43,7 +40,5 @@ class App extends Component {
         );
     }
 }
-
-//const theme = createMuiTheme(themeData);
 
 export default App;

@@ -1,0 +1,28 @@
+{
+  "api": {
+    "react": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [],
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "description": "demo",
+              "apiKeyExpirationDays": "100"
+            }
+          }
+        }
+      }
+    }
+  },
+  "auth": {
+    "oldforgemaker212a4e9b": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}

@@ -31,9 +31,10 @@ class About extends Component {
 
     if (loginRender) {
       linkButton = <a href='/admin'>Admin Page</a>;
-      loginComp = <LogIn />
+      //loginComp = <LogIn />
     } else {
-      linkButton = <button onClick={this.loginComp}>I Am Me</button>
+      //linkButton = <button onClick={this.loginComp}>I Am Me</button>
+      linkButton = <a href='/admin' class="btn btn-secondary">I Am Me</a>
     }
 
     return (

@@ -18,9 +18,9 @@ import './styles/index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // AWS Imports
-//import Amplify from 'aws-amplify';
-//import config from './aws-exports';
-//Amplify.configure(config);
+import Amplify from 'aws-amplify';
+import config from './aws-exports';
+Amplify.configure(config);
 
 /************************REDUX STORE*********************** */
 const store = createStore(
