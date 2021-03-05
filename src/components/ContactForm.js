@@ -4,8 +4,8 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-import { API } from 'aws-amplify';
-import { createContact as createContactMutation} from '../graphql/mutations.js';
+//import { API } from 'aws-amplify';
+//import { createContact as createContactMutation} from '../graphql/mutations.js';
 
 class ContactForm extends Component {
   constructor (props) {
@@ -25,20 +25,7 @@ class ContactForm extends Component {
   }
 
   contactSubmit = () => {
-    var data = JSON.stringify({
-      "firstName":this.fName.current.value,
-      "lastName":this.lName.current.value,
-      "email":this.email.current.value,
-      "phone":this.phone.current.value,
-      "message":this.message.current.value,
-      "contactReason":this.reason.current.value
-    });
-    //if (!formData.name || !formData.description) return;
-    API.graphql({ query: createContactMutation, variables: { input: data } });
-    //setNotes([ ...notes, formData ]);
-    //setFormData(initialFormState);
-
-    /* // instantiate a headers object
+    // instantiate a headers object
     var myHeaders = new Headers();
     // add content type header to object
     myHeaders.append("Content-Type", "application/json");
@@ -63,7 +50,7 @@ class ContactForm extends Component {
     fetch("https://c7pcclcqs3.execute-api.us-west-2.amazonaws.com/dev", requestOptions)
     .then(response => response.text())
     .then(result => alert(JSON.parse(result).body))
-    .catch(error => console.log('error', error)); */
+    .catch(error => console.log('error', error)); 
   }
   
   render() {
