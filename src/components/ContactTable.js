@@ -3,14 +3,38 @@ import React from "react";
 import Table from 'react-bootstrap/Table';
 import { Card } from "react-bootstrap";
 
+import { API } from 'aws-amplify';
+import * as queries from '../graphql/queries';
+
 class ContactTable extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {}
+        this.state = { contacts: [] }
         //this.newTicketQuery = this.newTicketQuery.bind(this)
     }
 
+    componentDidMount() {
+        this.fetchContacts();
+    }
+
+    async fetchContacts() {
+        try {
+            const apiData = await API.graphql({ query: queries.listContacts, variables: {} });
+            this.setState({ contacts: apiData.data.listContacts.items });
+            console.log(this.state.contacts);
+        } catch (err) {
+            console.log('Error fetching page intro');
+            console.log(err);
+        }
+    }
+
+    deleteContact() {
+
+    }
+
     render() {
+
+        const contacts = this.state.contacts;
 
         return (
             <div>
@@ -31,20 +55,22 @@ class ContactTable extends React.Component {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Sample Date</td>
-                                    <td>Sample Name</td>
-                                    <td>Sample Email</td>
-                                    <td>Sample Phone</td>
-                                    <td>Sample Reason</td>
-                                    <td>Sample Message</td>
-                                    <td><button>Delete Contact</button></td>
-                                </tr>
+                                {contacts.map(c => (
+                                    <tr key={c.id}>
+                                        <td>Date Created</td>
+                                        <td>{c.firstName} {c.lastName}</td>
+                                        <td>{c.email}</td>
+                                        <td>{c.phone}</td>
+                                        <td>{c.contactReason}</td>
+                                        <td>{c.message}</td>
+                                        <td><button name={c.id} onClick={this.deleteContact} >X</button></td>
+                                    </tr>
+                                ))}
                             </tbody>
                         </Table>
                     </Card.Body>
                 </Card>
-            </div>
+            </div >
         );
     }
 }

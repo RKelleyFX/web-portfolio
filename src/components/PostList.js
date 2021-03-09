@@ -15,8 +15,7 @@ class PostList extends Component {
   
   render() {
     return (
-      <div>
-        <h2>{this.props.pageId} posts</h2>  
+      <div> 
         <PostView />
       </div>
     )

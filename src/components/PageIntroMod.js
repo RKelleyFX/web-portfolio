@@ -6,7 +6,7 @@ import Card from 'react-bootstrap/Card';
 
 import { API } from 'aws-amplify';
 import { getPageIntro } from '../graphql/queries';
-import { createPageIntro as createIntroMutation } from '../graphql/mutations'; 
+import { updatePageIntro as updateIntroMutation } from '../graphql/mutations'; 
 
 const initialFormState = { page: '', body: ''}
 
@@ -19,16 +19,20 @@ function PageIntroMod () {
     }, []);
 
     async function fetchIntro() {
-        const apiData = await API.graphql({ query: getPageIntro, variables: { page: 'home'}});
-        setIntro(apiData.data.getPageIntro.items);
-        
+        //const apiData = await API.graphql({ query: getPageIntro, variables: { page: 'home'}});
+        //setIntro(apiData.data.getPageIntro.items);  
     }
 
     async function updateIntro() {
-        if (!formData.page || !formData.body) return;
-        await API.graphql({ query: createIntroMutation, variables: { input: formData } });
-        setIntro([ ...intro, formData ]);
-        setFormData(initialFormState); 
+        try {
+            if (!formData.page || !formData.body) return;
+            await API.graphql({ query: updateIntroMutation, variables: { filter: {page: {eq: "doing"}}, input: formData } });
+            setIntro([ ...intro, formData ]);
+            setFormData(initialFormState);
+        } catch (err) {
+            console.log('Error updating page intro');
+            console.log(err);
+        } 
     }
 
     

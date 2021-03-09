@@ -3,24 +3,40 @@ import React, { Component } from 'react';
 import '../styles/style.css';
 import Icon from '../assets/icons/gear.png';
 
+import { API } from 'aws-amplify';
+import * as queries from '../graphql/queries';
+
 class PageIntro extends Component {
   constructor (props) {
     super(props)
-    //this.state = { value: false }
+    this.state = { introArray: " ", pageIntro: " " }
     //this.newTicketQuery = this.newTicketQuery.bind(this)
   }
 
   componentDidMount() {
-    
+    this.fetchIntro();  
   }
   
-// p: in render is to be replaced by conditional render based off page that is navigated to
+  async fetchIntro() {
+    try {
+      const apiData = await API.graphql({ query: queries.listPageIntros, variables: { filter: {page: {eq: this.props.pageId }} } });
+      this.setState({ introArray: apiData.data.listPageIntros.items });
+      const singleIntro = this.state.introArray.find( intro => intro.body !== null );
+      this.setState({ pageIntro: singleIntro });
+    } catch (err) {
+      console.log('Error fetching page intro');
+      console.log(err);
+    }
+  }
 
   render() {
+
+    const intro = this.state.pageIntro.body
+
     return (
       <div className='container'>
         <img id='pageIcon' src={Icon}></img>
-        <p id='pageText'>This is a text field for rendering the page info from the database. This object is rendered in a 'text field' component. I am going to utilize a state object in redux for tracking which page is rendered, making this component reusable.</p>
+        <p id='pageText'> {intro} </p>
       </div>
     )
   }

@@ -1,6 +1,108 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const onCreatePageIntro = /* GraphQL */ `
+  subscription OnCreatePageIntro($page: String) {
+    onCreatePageIntro(page: $page) {
+      id
+      page
+      body
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdatePageIntro = /* GraphQL */ `
+  subscription OnUpdatePageIntro($page: String) {
+    onUpdatePageIntro(page: $page) {
+      id
+      page
+      body
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeletePageIntro = /* GraphQL */ `
+  subscription OnDeletePageIntro($page: String) {
+    onDeletePageIntro(page: $page) {
+      id
+      page
+      body
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreatePortfolioPost = /* GraphQL */ `
+  subscription OnCreatePortfolioPost(
+    $page: String
+    $featured: Boolean
+    $keywords: String
+  ) {
+    onCreatePortfolioPost(
+      page: $page
+      featured: $featured
+      keywords: $keywords
+    ) {
+      id
+      page
+      title
+      intro
+      body
+      featured
+      keywords
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdatePortfolioPost = /* GraphQL */ `
+  subscription OnUpdatePortfolioPost(
+    $page: String
+    $featured: Boolean
+    $keywords: String
+  ) {
+    onUpdatePortfolioPost(
+      page: $page
+      featured: $featured
+      keywords: $keywords
+    ) {
+      id
+      page
+      title
+      intro
+      body
+      featured
+      keywords
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeletePortfolioPost = /* GraphQL */ `
+  subscription OnDeletePortfolioPost(
+    $page: String
+    $featured: Boolean
+    $keywords: String
+  ) {
+    onDeletePortfolioPost(
+      page: $page
+      featured: $featured
+      keywords: $keywords
+    ) {
+      id
+      page
+      title
+      intro
+      body
+      featured
+      keywords
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const onCreateContact = /* GraphQL */ `
   subscription OnCreateContact {
     onCreateContact {
@@ -41,84 +143,6 @@ export const onDeleteContact = /* GraphQL */ `
       phone
       message
       contactReason
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onCreatePageIntro = /* GraphQL */ `
-  subscription OnCreatePageIntro {
-    onCreatePageIntro {
-      id
-      page
-      body
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdatePageIntro = /* GraphQL */ `
-  subscription OnUpdatePageIntro {
-    onUpdatePageIntro {
-      id
-      page
-      body
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeletePageIntro = /* GraphQL */ `
-  subscription OnDeletePageIntro {
-    onDeletePageIntro {
-      id
-      page
-      body
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onCreatePortfolioPost = /* GraphQL */ `
-  subscription OnCreatePortfolioPost {
-    onCreatePortfolioPost {
-      id
-      page
-      title
-      intro
-      body
-      featured
-      keywords
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdatePortfolioPost = /* GraphQL */ `
-  subscription OnUpdatePortfolioPost {
-    onUpdatePortfolioPost {
-      id
-      page
-      title
-      intro
-      body
-      featured
-      keywords
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeletePortfolioPost = /* GraphQL */ `
-  subscription OnDeletePortfolioPost {
-    onDeletePortfolioPost {
-      id
-      page
-      title
-      intro
-      body
-      featured
-      keywords
       createdAt
       updatedAt
     }

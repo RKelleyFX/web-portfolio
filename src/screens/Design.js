@@ -12,7 +12,7 @@ import WFAdmin from '../assets/images/WFAdmin.png';
 class Design extends Component {
   constructor(props) {
     super(props)
-    //this.state = { value: false }
+    this.state = { pageId: "designing" }
     //this.newTicketQuery = this.newTicketQuery.bind(this)
   }
 
@@ -28,7 +28,7 @@ class Design extends Component {
           <div className='left-column'></div>
           <div className='center-column'>
             <h2>Designing</h2>
-            <PageIntro />
+            <PageIntro pageId={this.state.pageId}/>
             <div className='container'>
             <Card className="text-center" style={{ width: '45%' }}>
               <Card.Img variant="top" src={WFHome} />

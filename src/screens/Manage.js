@@ -10,7 +10,7 @@ import Kanban from '../assets/images/Kanban.png';
 class Manage extends Component {
   constructor(props) {
     super(props)
-    //this.state = { value: false }
+    this.state = { pageId: "doing" }
     //this.newTicketQuery = this.newTicketQuery.bind(this)
   }
 
@@ -27,7 +27,7 @@ class Manage extends Component {
           </div>
           <div className='center-column'>
             <h2>Doing</h2>
-            <PageIntro />
+            <PageIntro pageId={this.state.pageId}/>
             <div className='container'>
               <Card className="text-center" style={{ width: '45%' }}>
                 <Card.Img variant="top" src={Kanban} />

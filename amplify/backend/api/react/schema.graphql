@@ -1,5 +1,5 @@
 type Contact @model {
-  id: ID!
+  id: ID
   firstName: String!
   lastName: String!
   email: String!
@@ -8,18 +8,27 @@ type Contact @model {
   contactReason: String
 }
 
-type PageIntro @model {
-  id: ID!
+type PageIntro @model(subscriptions: null) {
+  id: ID
   page: String!
   body: String
 }
 
-type PortfolioPost @model {
-  id: ID!
+type PortfolioPost @model(subscriptions: null) {
+  id: ID
   page: String!
   title: String!
   intro: String
   body: String
   featured: Boolean!
   keywords: String
+}
+
+type Subscription {
+  onCreatePageIntro(page: String): PageIntro @aws_subscribe(mutations: ["createPageIntro"])
+  onUpdatePageIntro(page: String): PageIntro @aws_subscribe(mutations: ["updatePageIntro"])
+  onDeletePageIntro(page: String): PageIntro @aws_subscribe(mutations: ["deletePageIntro"])
+  onCreatePortfolioPost(page: String, featured: Boolean, keywords: String): PortfolioPost @aws_subscribe(mutations: ["createPortfolioPost"])
+  onUpdatePortfolioPost(page: String, featured: Boolean, keywords: String ): PortfolioPost @aws_subscribe(mutations: ["updatePortfolioPost"])
+  onDeletePortfolioPost(page: String, featured: Boolean, keywords: String ): PortfolioPost @aws_subscribe(mutations: ["deletePortfolioPost"])
 }

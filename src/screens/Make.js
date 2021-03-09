@@ -13,7 +13,7 @@ import { NAVI_LOCATION } from '../actions/actions';
 class Make extends Component {
   constructor(props) {
     super(props)
-    this.state = { pageId: "make" }
+    this.state = { pageId: "making" }
     //this.newTicketQuery = this.newTicketQuery.bind(this)
   }
 
