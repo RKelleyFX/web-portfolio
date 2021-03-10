@@ -1,0 +1,36 @@
+type Contact @model {
+  id: ID
+  firstName: String!
+  lastName: String!
+  email: String!
+  phone: String
+  message: String
+  contactReason: String
+}
+
+type PageIntro @model(subscriptions: null) {
+  id: ID
+  page: String!
+  body: String
+  icon: String
+}
+
+type PortfolioPost @model(subscriptions: null) {
+  id: ID
+  page: String!
+  title: String!
+  intro: String
+  body: String
+  featured: Boolean!
+  keywords: String
+  attachment: String
+}
+
+type Subscription {
+  onCreatePageIntro(page: String): PageIntro @aws_subscribe(mutations: ["createPageIntro"])
+  onUpdatePageIntro(page: String): PageIntro @aws_subscribe(mutations: ["updatePageIntro"])
+  onDeletePageIntro(page: String): PageIntro @aws_subscribe(mutations: ["deletePageIntro"])
+  onCreatePortfolioPost(page: String, featured: Boolean, keywords: String): PortfolioPost @aws_subscribe(mutations: ["createPortfolioPost"])
+  onUpdatePortfolioPost(page: String, featured: Boolean, keywords: String ): PortfolioPost @aws_subscribe(mutations: ["updatePortfolioPost"])
+  onDeletePortfolioPost(page: String, featured: Boolean, keywords: String ): PortfolioPost @aws_subscribe(mutations: ["deletePortfolioPost"])
+}

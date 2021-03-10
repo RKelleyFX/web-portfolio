@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-react-dev-145828-authRole",
+      "UnauthRoleArn": "arn:aws:iam::453881846548:role/amplify-react-dev-145828-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::453881846548:role/amplify-react-dev-145828-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-react-dev-145828-deployment",
+      "UnauthRoleName": "amplify-react-dev-145828-unauthRole",
+      "StackName": "amplify-react-dev-145828",
+      "StackId": "arn:aws:cloudformation:us-west-2:453881846548:stack/amplify-react-dev-145828/0220b440-a453-11ea-9550-0621d00a30ea",
+      "AmplifyAppId": "d39laq4qn75yop"
+    },
+    "categories": {
+      "auth": {
+        "oldforgemaker212a4e9b": {}
+      }
+    }
+  }
+}
