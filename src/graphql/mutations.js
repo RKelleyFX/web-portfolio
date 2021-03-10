@@ -64,6 +64,7 @@ export const createPageIntro = /* GraphQL */ `
       id
       page
       body
+      icon
       createdAt
       updatedAt
     }
@@ -78,6 +79,7 @@ export const updatePageIntro = /* GraphQL */ `
       id
       page
       body
+      icon
       createdAt
       updatedAt
     }
@@ -92,6 +94,7 @@ export const deletePageIntro = /* GraphQL */ `
       id
       page
       body
+      icon
       createdAt
       updatedAt
     }
@@ -110,6 +113,7 @@ export const createPortfolioPost = /* GraphQL */ `
       body
       featured
       keywords
+      attachment
       createdAt
       updatedAt
     }
@@ -128,6 +132,7 @@ export const updatePortfolioPost = /* GraphQL */ `
       body
       featured
       keywords
+      attachment
       createdAt
       updatedAt
     }
@@ -146,6 +151,7 @@ export const deletePortfolioPost = /* GraphQL */ `
       body
       featured
       keywords
+      attachment
       createdAt
       updatedAt
     }

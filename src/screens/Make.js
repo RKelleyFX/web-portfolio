@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 import NaviBar from '../components/Navbar';
 
 import PageIntro from '../components/PageIntro';
-import PostList from '../components/PostList';
+import PostView from '../components/PostView';
 
 // Redux Imports
 import { useSelector, useDispatch, connect } from 'react-redux';
@@ -33,7 +33,7 @@ class Make extends Component {
           <div className='center-column'>
             <h2>Making</h2>
             <PageIntro pageId={this.state.pageId}/>
-            <PostList pageId={this.state.pageId}/>
+            <PostView pageId={this.state.pageId}/>
             {/*<h5>Magic Castle</h5>
           <h5>Farie Doors</h5>
           <h5>Space Selfie</h5>

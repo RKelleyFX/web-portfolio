@@ -4,11 +4,11 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-import { API } from 'aws-amplify';
-import { getPageIntro } from '../graphql/queries';
-import { updatePageIntro as updateIntroMutation } from '../graphql/mutations'; 
+import { API, Storage } from 'aws-amplify';
+import { listPageIntros } from '../graphql/queries';
+import { createPageIntro as createIntroMutation } from '../graphql/mutations'; 
 
-const initialFormState = { page: '', body: ''}
+const initialFormState = { page: 'home', body: ''}
 
 function PageIntroMod () {
     const [intro, setIntro] = useState([]);
@@ -19,20 +19,32 @@ function PageIntroMod () {
     }, []);
 
     async function fetchIntro() {
-        //const apiData = await API.graphql({ query: getPageIntro, variables: { page: 'home'}});
-        //setIntro(apiData.data.getPageIntro.items);  
+        const apiData = await API.graphql({ query: listPageIntros, variables: { filter: { page: { eq: formData.page } } } });
+        setIntro(apiData.data.listPageIntros.items);
+        setFormData(apiData.data.listPageIntros.items);
+        console.log(apiData.data.listPageIntros.items);  
     }
 
     async function updateIntro() {
         try {
-            if (!formData.page || !formData.body) return;
-            await API.graphql({ query: updateIntroMutation, variables: { filter: {page: {eq: "doing"}}, input: formData } });
+            await API.graphql({ query: createIntroMutation, variables: { input: formData } });
+            if (formData.icon) {
+                const icon = await Storage.get(formData.icon);
+                formData.icon = icon;
+            }
             setIntro([ ...intro, formData ]);
             setFormData(initialFormState);
         } catch (err) {
             console.log('Error updating page intro');
             console.log(err);
         } 
+    }
+
+    async function onChange(e) {
+        if (!e.target.files[0]) return
+        const file = e.target.files[0];
+        setFormData({ ...formData, icon: file.name });
+        await Storage.put(file.name, file);
     }
 
     
@@ -49,7 +61,6 @@ function PageIntroMod () {
                                 onChange={e => setFormData({ ...formData, 'page': e.target.value})}
                                 value={formData.page}
                             >
-                                <option>Select Page</option>
                                 <option value={"home"}>Home</option>
                                 <option value={"making"}>Making</option>
                                 <option value={"doing"}>Doing</option>
@@ -66,6 +77,10 @@ function PageIntroMod () {
                                 onChange={e => setFormData({ ...formData, 'body': e.target.value})}
                                 value={formData.body}
                             />
+                        </Form.Group>
+                        <Form.Group controlId="exampleForm.ControlFile1">
+                            <Form.Label>Upload Icon</Form.Label>
+                            <Form.File type="file" onChange={onChange}/>
                         </Form.Group>
                         <Button variant="primary" onClick={updateIntro}>
                             Save Intro

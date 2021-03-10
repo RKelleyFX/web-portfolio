@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import '../styles/style.css';
 import Icon from '../assets/icons/gear.png';
 
-import { API } from 'aws-amplify';
+import { API, Storage } from 'aws-amplify';
 import * as queries from '../graphql/queries';
 
 class PageIntro extends Component {
@@ -20,6 +20,14 @@ class PageIntro extends Component {
   async fetchIntro() {
     try {
       const apiData = await API.graphql({ query: queries.listPageIntros, variables: { filter: {page: {eq: this.props.pageId }} } });
+      const introsFromAPI = apiData.data.listPageIntros.items;
+      await Promise.all(introsFromAPI.map(async p => {
+        if (p.icon) {
+            const icon = await Storage.get(p.icon);
+            p.icon = icon;
+        }
+        return p;
+      }))
       this.setState({ introArray: apiData.data.listPageIntros.items });
       const singleIntro = this.state.introArray.find( intro => intro.body !== null );
       this.setState({ pageIntro: singleIntro });
@@ -32,10 +40,11 @@ class PageIntro extends Component {
   render() {
 
     const intro = this.state.pageIntro.body
+    const icon = this.state.pageIntro.icon
 
     return (
       <div className='container'>
-        <img id='pageIcon' src={Icon}></img>
+        <img id='pageIcon' src={icon}></img>
         <p id='pageText'> {intro} </p>
       </div>
     )

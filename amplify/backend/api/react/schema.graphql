@@ -12,6 +12,7 @@ type PageIntro @model(subscriptions: null) {
   id: ID
   page: String!
   body: String
+  icon: String
 }
 
 type PortfolioPost @model(subscriptions: null) {
@@ -22,6 +23,7 @@ type PortfolioPost @model(subscriptions: null) {
   body: String
   featured: Boolean!
   keywords: String
+  attachment: String
 }
 
 type Subscription {

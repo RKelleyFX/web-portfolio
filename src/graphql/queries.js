@@ -44,6 +44,7 @@ export const getPageIntro = /* GraphQL */ `
       id
       page
       body
+      icon
       createdAt
       updatedAt
     }
@@ -60,6 +61,7 @@ export const listPageIntros = /* GraphQL */ `
         id
         page
         body
+        icon
         createdAt
         updatedAt
       }
@@ -77,6 +79,7 @@ export const getPortfolioPost = /* GraphQL */ `
       body
       featured
       keywords
+      attachment
       createdAt
       updatedAt
     }
@@ -97,6 +100,7 @@ export const listPortfolioPosts = /* GraphQL */ `
         body
         featured
         keywords
+        attachment
         createdAt
         updatedAt
       }

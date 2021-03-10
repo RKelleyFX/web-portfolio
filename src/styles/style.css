@@ -79,6 +79,8 @@
     flex-direction: column;
     background-color: whitesmoke;
     border-radius: 0.25rem;
+    margin: 10px;
+    box-shadow: 0px 0px 2px 1px rgb(139, 139, 139);
 }
 
 .post-header {

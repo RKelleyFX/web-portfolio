@@ -21,7 +21,6 @@ class ContactTable extends React.Component {
         try {
             const apiData = await API.graphql({ query: queries.listContacts, variables: {} });
             this.setState({ contacts: apiData.data.listContacts.items });
-            console.log(this.state.contacts);
         } catch (err) {
             console.log('Error fetching page intro');
             console.log(err);
