@@ -1,21 +1,21 @@
-type Contact @model {
+type Contact @model @auth(rules: [{ allow: public, provider: iam, operations: [read] }]){
   id: ID
   firstName: String!
   lastName: String!
   email: String!
   phone: String
-  message: String
+  message: Stringa
   contactReason: String
 }
 
-type PageIntro @model(subscriptions: null) {
+type PageIntro @model @auth(rules: [{ allow: public, provider: iam, operations: [read] }]){
   id: ID
   page: String!
   body: String
   icon: String
 }
 
-type PortfolioPost @model(subscriptions: null) {
+type PortfolioPost @model @auth(rules: [{ allow: public, provider: iam, operations: [read] }]){
   id: ID
   page: String!
   title: String!
@@ -24,13 +24,4 @@ type PortfolioPost @model(subscriptions: null) {
   featured: Boolean!
   keywords: String
   attachment: String
-}
-
-type Subscription {
-  onCreatePageIntro(page: String): PageIntro @aws_subscribe(mutations: ["createPageIntro"])
-  onUpdatePageIntro(page: String): PageIntro @aws_subscribe(mutations: ["updatePageIntro"])
-  onDeletePageIntro(page: String): PageIntro @aws_subscribe(mutations: ["deletePageIntro"])
-  onCreatePortfolioPost(page: String, featured: Boolean, keywords: String): PortfolioPost @aws_subscribe(mutations: ["createPortfolioPost"])
-  onUpdatePortfolioPost(page: String, featured: Boolean, keywords: String ): PortfolioPost @aws_subscribe(mutations: ["updatePortfolioPost"])
-  onDeletePortfolioPost(page: String, featured: Boolean, keywords: String ): PortfolioPost @aws_subscribe(mutations: ["deletePortfolioPost"])
 }
