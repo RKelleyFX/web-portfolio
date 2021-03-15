@@ -2,6 +2,7 @@ import React from "react";
 
 import Table from 'react-bootstrap/Table';
 import { Card } from "react-bootstrap";
+import Moment from 'moment';
 
 import { API } from 'aws-amplify';
 import * as queries from '../graphql/queries';
@@ -35,6 +36,20 @@ class ContactTable extends React.Component {
 
         const contacts = this.state.contacts;
 
+        const rows = contacts.map(c => (
+            <tr key={c.id}>
+                <td>
+                    {Moment(c.createdAt).format('MM-DD-YYYY')}
+                </td>
+                <td>{c.firstName} {c.lastName}</td>
+                <td>{c.email}</td>
+                <td>{c.phone}</td>
+                <td>{c.contactReason}</td>
+                <td>{c.message}</td>
+                <td><button name={c.id} onClick={this.deleteContact} >X</button></td>
+            </tr>
+        ));
+
         return (
             <div>
                 <Card>
@@ -54,17 +69,7 @@ class ContactTable extends React.Component {
                                 </tr>
                             </thead>
                             <tbody>
-                                {contacts.map(c => (
-                                    <tr key={c.id}>
-                                        <td>Date Created</td>
-                                        <td>{c.firstName} {c.lastName}</td>
-                                        <td>{c.email}</td>
-                                        <td>{c.phone}</td>
-                                        <td>{c.contactReason}</td>
-                                        <td>{c.message}</td>
-                                        <td><button name={c.id} onClick={this.deleteContact} >X</button></td>
-                                    </tr>
-                                ))}
+                                {rows}
                             </tbody>
                         </Table>
                     </Card.Body>
