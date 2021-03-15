@@ -4,10 +4,10 @@ import NaviBar from '../components/Navbar';
 import PageIntro from '../components/PageIntro';
 import PostView from '../components/PostView';
 
-class Design extends Component {
+class Code extends Component {
   constructor(props) {
     super(props)
-    this.state = { pageId: "designing" }
+    this.state = { pageId: "coding" }
     //this.newTicketQuery = this.newTicketQuery.bind(this)
   }
 
@@ -22,7 +22,7 @@ class Design extends Component {
         <div className='row'>
           <div className='left-column'></div>
           <div className='center-column'>
-            <h2>Designing</h2>
+            <h2>Coding</h2>
             <PageIntro pageId={this.state.pageId}/>
             <PostView pageId={this.state.pageId}/>
             {/*<h5>CAD Design</h5>
@@ -36,4 +36,4 @@ class Design extends Component {
   }
 };
 
-export default Design;
+export default Code;

@@ -9,7 +9,7 @@ import PostList from '../components/PostList';
 class Steam extends Component {
   constructor(props) {
     super(props)
-    this.state = { pageId: "future" }
+    this.state = { pageId: "learning" }
     //this.newTicketQuery = this.newTicketQuery.bind(this)
   }
   
@@ -24,7 +24,7 @@ class Steam extends Component {
         <div className='row'>
           <div className='left-column'></div>
           <div className='center-column'>
-            <h2>The Future - STEAM</h2>
+            <h2>Learning - STEAM</h2>
             <PageIntro pageId={this.state.pageId}/>
             <PostList pageId={this.state.pageId}/>
             {/*<h5>Continuing Education</h5>

@@ -7,7 +7,7 @@ import PostView from '../components/PostView';
 class Manage extends Component {
   constructor(props) {
     super(props)
-    this.state = { pageId: "doing" }
+    this.state = { pageId: "managing" }
     //this.newTicketQuery = this.newTicketQuery.bind(this)
   }
 
@@ -23,7 +23,7 @@ class Manage extends Component {
           <div className='left-column'>
           </div>
           <div className='center-column'>
-            <h2>Doing</h2>
+            <h2>Managing</h2>
             <PageIntro pageId={this.state.pageId}/>
             <PostView pageId={this.state.pageId}/>
             {/*<h5>Project Management</h5>

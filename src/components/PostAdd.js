@@ -61,9 +61,9 @@ function PostAdd() {
             <Form.Label>Post Location</Form.Label>
             <Form.Control as="select" onChange={e => setFormData({ ...formData, 'page': e.target.value })} value={formData.page} >
               <option value={"making"}>Making</option>
-              <option value={"doing"}>Doing</option>
-              <option value={"designing"}>Designing</option>
-              <option value={"future"}>The Future / STEAM</option>
+              <option value={"managing"}>Managing</option>
+              <option value={"coding"}>Coding</option>
+              <option value={"learning"}>Learning / STEAM</option>
               <option value={"about"}>About Me</option>
             </Form.Control>
           </Form.Group>

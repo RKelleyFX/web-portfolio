@@ -63,9 +63,9 @@ function PageIntroMod () {
                             >
                                 <option value={"home"}>Home</option>
                                 <option value={"making"}>Making</option>
-                                <option value={"doing"}>Doing</option>
-                                <option value={"designing"}>Designing</option>
-                                <option value={"future"}>The Future</option>
+                                <option value={"managing"}>Managing</option>
+                                <option value={"coding"}>Coding</option>
+                                <option value={"learning"}>Learning</option>
                                 <option value={"about"}>About Me</option>
                             </Form.Control>
                         </Form.Group>
