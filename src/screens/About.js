@@ -12,7 +12,7 @@ import '../styles/style.css';
 class About extends Component {
   constructor (props) {
     super(props)
-    this.state = { loginView: false, pageId: "about" }
+    this.state = { pageId: "about" }
     //this.newTicketQuery = this.newTicketQuery.bind(this)
   }
 
@@ -20,28 +20,29 @@ class About extends Component {
     
   }
 
-  loginComp =() => {
-    this.setState({loginView: true})
-  };
+  //loginComp =() => {
+    //this.setState({loginView: true})
+  //};
   
   render() {
     
-    const loginRender = this.state.loginView;
-    let loginComp, linkButton;
+    //const loginRender = this.state.loginView;
+    let linkButton = <a href='/admin' className="btn btn-secondary">Admin Page</a>;
 
-    if (loginRender) {
+    /* if (loginRender) {
       linkButton = <a href='/admin'>Admin Page</a>;
       //loginComp = <LogIn />
     } else {
       //linkButton = <button onClick={this.loginComp}>I Am Me</button>
       linkButton = <a href='/admin' className="btn btn-secondary">I Am Me</a>
-    }
-
+    } */
     return (
       <div>
         <NaviBar />
         <div className='row'>
-          <div className='main-column'>
+          <div className='left-column'>
+          </div>
+          <div className='center-column'>
             <h2>About Me</h2>
             <div className='container'>
               <img id='headShot' src={MeColor}></img>
@@ -52,9 +53,8 @@ class About extends Component {
             <h5>Volunteer</h5>
             <h5>Travel</h5>*/}
           </div>
-          <div className='side-column'>
-            <div>{linkButton}</div>
-            <div>{loginComp}</div>
+          <div className='right-column'>
+            {linkButton}
           </div>
         </div>
       </div>

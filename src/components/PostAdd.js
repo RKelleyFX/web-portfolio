@@ -7,7 +7,7 @@ import Card from 'react-bootstrap/Card';
 import { API, Storage } from 'aws-amplify';
 import { createPortfolioPost as createPostMutation } from '../graphql/mutations.js';
 
-const initialFormState = { page: '', title: '', intro: '', body: '', featured: false, keywords: '', attachment: '' }
+const initialFormState = { page: '', title: '', intro: '', body: '', featured: false, keywords: '', attachment: '', archive: false }
 
 function PostAdd() {
   const [post, setPost] = useState([]);

@@ -8,7 +8,7 @@ body {
 /* Styling for the App Body */
 .App {
     display: flex;
-    max-width: 1200px;
+    width: 1200px;
     min-height: 800px;
     margin-top: 20px;
     margin-bottom: 20px;

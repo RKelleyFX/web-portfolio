@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 
-
 import NaviBar from '../components/Navbar';
-
 import PageIntro from '../components/PageIntro';
 import PostView from '../components/PostView';
+
+import '../styles/style.css';
 
 // Redux Imports
 import { useSelector, useDispatch, connect } from 'react-redux';

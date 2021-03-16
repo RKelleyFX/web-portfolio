@@ -93,6 +93,7 @@ export const onCreatePortfolioPost = /* GraphQL */ `
       featured
       keywords
       attachment
+      archive
       createdAt
       updatedAt
     }
@@ -109,6 +110,7 @@ export const onUpdatePortfolioPost = /* GraphQL */ `
       featured
       keywords
       attachment
+      archive
       createdAt
       updatedAt
     }
@@ -125,6 +127,7 @@ export const onDeletePortfolioPost = /* GraphQL */ `
       featured
       keywords
       attachment
+      archive
       createdAt
       updatedAt
     }

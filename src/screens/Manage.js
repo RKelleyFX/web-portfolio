@@ -4,6 +4,8 @@ import NaviBar from '../components/Navbar';
 import PageIntro from '../components/PageIntro';
 import PostView from '../components/PostView';
 
+import '../styles/style.css';
+
 class Manage extends Component {
   constructor(props) {
     super(props)
@@ -36,7 +38,6 @@ class Manage extends Component {
       </div>
     )
   }
-
 };
 
 export default Manage;

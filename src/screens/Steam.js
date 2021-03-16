@@ -5,6 +5,8 @@ import NaviBar from '../components/Navbar';
 import PageIntro from '../components/PageIntro';
 import PostList from '../components/PostList';
 
+import '../styles/style.css';
+
 
 class Steam extends Component {
   constructor(props) {

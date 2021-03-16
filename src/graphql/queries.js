@@ -80,6 +80,7 @@ export const getPortfolioPost = /* GraphQL */ `
       featured
       keywords
       attachment
+      archive
       createdAt
       updatedAt
     }
@@ -101,6 +102,7 @@ export const listPortfolioPosts = /* GraphQL */ `
         featured
         keywords
         attachment
+        archive
         createdAt
         updatedAt
       }

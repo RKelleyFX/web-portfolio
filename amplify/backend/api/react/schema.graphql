@@ -1,4 +1,4 @@
-type Contact @model @auth(rules: [{ allow: public, provider: iam, operations: [read] }]){
+type Contact @model @auth(rules: [{ allow: public, provider: iam }]){
   id: ID
   firstName: String!
   lastName: String!
@@ -8,14 +8,14 @@ type Contact @model @auth(rules: [{ allow: public, provider: iam, operations: [r
   contactReason: String
 }
 
-type PageIntro @model @auth(rules: [{ allow: public, provider: iam, operations: [read] }]){
+type PageIntro @model @auth(rules: [{ allow: public, provider: iam }]){
   id: ID
   page: String!
   body: String
   icon: String
 }
 
-type PortfolioPost @model @auth(rules: [{ allow: public, provider: iam, operations: [read] }]){
+type PortfolioPost @model @auth(rules: [{ allow: public, provider: iam }]){
   id: ID
   page: String!
   title: String!
@@ -24,4 +24,5 @@ type PortfolioPost @model @auth(rules: [{ allow: public, provider: iam, operatio
   featured: Boolean!
   keywords: String
   attachment: String
+  archive: Boolean!
 }
