@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import NaviBar from '../components/Navbar';
 
 import PageIntro from '../components/PageIntro';
-import PostList from '../components/PostList';
+import PostView from '../components/PostView';
 
 import '../styles/style.css';
 
@@ -28,7 +28,7 @@ class Steam extends Component {
           <div className='center-column'>
             <h2>Learning - STEAM</h2>
             <PageIntro pageId={this.state.pageId}/>
-            <PostList pageId={this.state.pageId}/>
+            <PostView pageId={this.state.pageId}/>
             {/*<h5>Continuing Education</h5>
         <h5>STEAM</h5>*/}
           </div>
