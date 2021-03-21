@@ -12,11 +12,6 @@ class Steam extends Component {
   constructor(props) {
     super(props)
     this.state = { pageId: "learning" }
-    //this.newTicketQuery = this.newTicketQuery.bind(this)
-  }
-  
-  componentDidMount() {
-    
   }
 
   render() {
@@ -29,8 +24,6 @@ class Steam extends Component {
             <h2>Learning - STEAM</h2>
             <PageIntro pageId={this.state.pageId}/>
             <PostView pageId={this.state.pageId}/>
-            {/*<h5>Continuing Education</h5>
-        <h5>STEAM</h5>*/}
           </div>
           <div className='right-column'></div>
         </div>

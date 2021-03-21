@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 import NaviBar from '../components/Navbar';
-//import PageIntro from '../components/PageIntro';
 import ContactForm from '../components/ContactForm';
 import ControlledCarousel from '../components/carousel';
+import ModalResume from '../components/ModalResume';
 
 import '../styles/style.css';
 
@@ -16,11 +16,6 @@ class Home extends Component {
   constructor(props) {
     super(props)
     this.state = { contact: false };
-    //this.newTicketQuery = this.newTicketQuery.bind(this)
-  }
-
-  componentDidMount() {
-
   }
 
   contactForm() {
@@ -59,9 +54,9 @@ class Home extends Component {
           <div className='main-column'>
             <h2>Ryan Kelley</h2>
             <h3>Web Portfolio</h3>
-            <p id='welcomeText'>Welcome to my portfolio. This is a real time view of the progression of my build process. I've started my process with some wire frames which can be found on my <b>Coding Page</b>. From there you can head over to my <b>Managing Page</b> where you can see my kanban board and track my ticket progress.</p>
-            <p id='welcomeText'>I am hosting this application on AWS Amplify while using DynamoDB for my data base. Although I am aware that this is overkill for a blog format application, I couldn't waste an opportunity to learn a new technology. Currently all page intros as well as the posts are being rendered from S3 and DynamoDB via GraphQL.</p>
-            <p id='welcomeText'>My final steps will be cleaning up the structure of my application as well as styling and a responsive format. My goal is to create as many reusable components as possible while maintaining proper component structure. Thank you and feel free to leave a message to let my know you stopped by!</p>
+            <p id='welcomeText'>Welcome to my portfolio. This is my first published web application after completing my Full Stack Developer program at Woz-U. I hope you take the time to review all of the projects that I have worked on over the years. I've split up my portfolio into four categories for your browsing convenience.</p>
+            <p id='welcomeText'>The <b>Coding</b> page touches on my most recent endeavors of creating tools and applications that help businesses grow. The <b>Making</b> page is a reflection on my previous career as well as my desire to build physical projects with my hands. On the <b>Managing</b> page you will find projects that I have spearheaded as a team leader or manager. Finally on the <b>Learning</b> page is my contribution to the future of our society.</p>
+            <p id='welcomeText'>Feel free to check out any of the links for my social or git-repository sites. I’ve also added a contact button for you to send me a message. I hope you enjoy and feel free to reach out with any questions!</p>
             <h3>Featured Articles</h3>
             <div>
               <ControlledCarousel />
@@ -71,6 +66,9 @@ class Home extends Component {
             <div id='siderIcon'>
               <ContactCard />
             </div>
+            {/* <div id='siderIcon'>
+              <ModalResume />
+            </div> */}
             <div id='siderIcon'>
               {linkedIn}
             </div>

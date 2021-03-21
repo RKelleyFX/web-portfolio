@@ -8,11 +8,6 @@ class Code extends Component {
   constructor(props) {
     super(props)
     this.state = { pageId: "coding" }
-    //this.newTicketQuery = this.newTicketQuery.bind(this)
-  }
-
-  componentDidMount() {
-
   }
 
   render() {
@@ -25,9 +20,6 @@ class Code extends Component {
             <h2>Coding</h2>
             <PageIntro pageId={this.state.pageId}/>
             <PostView pageId={this.state.pageId}/>
-            {/*<h5>CAD Design</h5>
-        <h5>Web Development</h5>
-        <h5>Special Effects Technician</h5>*/}
           </div>
           <div className='right-column'></div>
         </div>

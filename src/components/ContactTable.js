@@ -6,6 +6,7 @@ import Moment from 'moment';
 
 import { API } from 'aws-amplify';
 import * as queries from '../graphql/queries';
+import * as mutations from '../graphql/mutations';
 
 class ContactTable extends React.Component {
     constructor(props) {
@@ -28,8 +29,10 @@ class ContactTable extends React.Component {
         }
     }
 
-    deleteContact() {
-
+    async deleteContact(id) {
+        const newContactsArray = this.state.contacts.filter(contact => contact.id !== id);
+        this.setState({ contacts: newContactsArray });
+        await API.graphql({ query: mutations.deleteContact, variables: { input: {id} }});
     }
 
     render() {
@@ -46,7 +49,7 @@ class ContactTable extends React.Component {
                 <td>{c.phone}</td>
                 <td>{c.contactReason}</td>
                 <td>{c.message}</td>
-                <td><button name={c.id} onClick={this.deleteContact} >X</button></td>
+                <td><button name={c.id} onClick={() => this.deleteContact(c.id)} >X</button></td>
             </tr>
         ));
 
