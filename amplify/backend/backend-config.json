@@ -7,11 +7,7 @@
         "authConfig": {
           "additionalAuthenticationProviders": [],
           "defaultAuthentication": {
-            "authenticationType": "API_KEY",
-            "apiKeyConfig": {
-              "apiKeyExpirationDays": 7,
-              "description": "demo"
-            }
+            "authenticationType": "AWS_IAM"
           }
         }
       }

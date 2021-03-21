@@ -29,7 +29,7 @@ class PostAdd extends Component {
             }))
             this.setState({ posts: postsFromAPI });
         } catch (err) {
-            console.log('Error fetching page intro');
+            console.log('Error fetching portfolio post');
             console.log(err);
         }
     }

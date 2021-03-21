@@ -12,49 +12,31 @@ import '../styles/style.css';
 class About extends Component {
   constructor (props) {
     super(props)
-    this.state = { loginView: false, pageId: "about" }
-    //this.newTicketQuery = this.newTicketQuery.bind(this)
+    this.state = { pageId: "about" }
   }
-
-  componentDidMount() {
-    
-  }
-
-  loginComp =() => {
-    this.setState({loginView: true})
-  };
   
   render() {
     
-    const loginRender = this.state.loginView;
-    let loginComp, linkButton;
-
-    if (loginRender) {
-      linkButton = <a href='/admin'>Admin Page</a>;
-      //loginComp = <LogIn />
-    } else {
-      //linkButton = <button onClick={this.loginComp}>I Am Me</button>
-      linkButton = <a href='/admin' className="btn btn-secondary">I Am Me</a>
-    }
+    let linkButton = <a href='/admin' className="btn btn-secondary">Admin Page</a>;
 
     return (
       <div>
         <NaviBar />
         <div className='row'>
-          <div className='main-column'>
+          <div className='left-column'>
+          </div>
+          <div className='center-column'>
             <h2>About Me</h2>
             <div className='container'>
               <img id='headShot' src={MeColor}></img>
+              <h3>Full Stack Engineer / Project Manager</h3>
+              <h5>Sherwood, OR - 818.653.5213</h5>
             </div>
             <PageIntro pageId={this.state.pageId}/>
             <PostView pageId={this.state.pageId}/>
-            {/*<h5>History</h5>
-            <h5>Volunteer</h5>
-            <h5>Travel</h5>*/}
           </div>
-          <div className='side-column'>
-            <div>{linkButton}</div>
-            <div>{loginComp}</div>
+          <div className='right-column'>
+            {linkButton}
           </div>
         </div>
       </div>

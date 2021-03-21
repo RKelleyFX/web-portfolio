@@ -4,15 +4,12 @@ import NaviBar from '../components/Navbar';
 import PageIntro from '../components/PageIntro';
 import PostView from '../components/PostView';
 
+import '../styles/style.css';
+
 class Manage extends Component {
   constructor(props) {
     super(props)
-    this.state = { pageId: "doing" }
-    //this.newTicketQuery = this.newTicketQuery.bind(this)
-  }
-
-  componentDidMount() {
-
+    this.state = { pageId: "managing" }
   }
 
   render() {
@@ -23,12 +20,9 @@ class Manage extends Component {
           <div className='left-column'>
           </div>
           <div className='center-column'>
-            <h2>Doing</h2>
+            <h2>Managing</h2>
             <PageIntro pageId={this.state.pageId}/>
             <PostView pageId={this.state.pageId}/>
-            {/*<h5>Project Management</h5>
-        <h5>Full Scale Effects</h5>
-        <h5>Special Effects Coordinator</h5>*/}
           </div>
           <div className='right-column'>
           </div>
@@ -36,7 +30,6 @@ class Manage extends Component {
       </div>
     )
   }
-
 };
 
 export default Manage;

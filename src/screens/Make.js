@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 
-
 import NaviBar from '../components/Navbar';
-
 import PageIntro from '../components/PageIntro';
 import PostView from '../components/PostView';
+
+import '../styles/style.css';
 
 // Redux Imports
 import { useSelector, useDispatch, connect } from 'react-redux';
@@ -14,13 +14,7 @@ class Make extends Component {
   constructor(props) {
     super(props)
     this.state = { pageId: "making" }
-    //this.newTicketQuery = this.newTicketQuery.bind(this)
   }
-
-  componentDidMount() {
-    
-  }
-
 
   render() {
     return (
@@ -34,10 +28,6 @@ class Make extends Component {
             <h2>Making</h2>
             <PageIntro pageId={this.state.pageId}/>
             <PostView pageId={this.state.pageId}/>
-            {/*<h5>Magic Castle</h5>
-          <h5>Farie Doors</h5>
-          <h5>Space Selfie</h5>
-            <h5>{name}</h5>*/}
           </div>
           <div className='right-column'>
             <p></p>

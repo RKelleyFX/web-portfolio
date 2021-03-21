@@ -3,18 +3,15 @@ import React, { Component } from 'react';
 import NaviBar from '../components/Navbar';
 
 import PageIntro from '../components/PageIntro';
-import PostList from '../components/PostList';
+import PostView from '../components/PostView';
+
+import '../styles/style.css';
 
 
 class Steam extends Component {
   constructor(props) {
     super(props)
-    this.state = { pageId: "future" }
-    //this.newTicketQuery = this.newTicketQuery.bind(this)
-  }
-  
-  componentDidMount() {
-    
+    this.state = { pageId: "learning" }
   }
 
   render() {
@@ -24,11 +21,9 @@ class Steam extends Component {
         <div className='row'>
           <div className='left-column'></div>
           <div className='center-column'>
-            <h2>The Future - STEAM</h2>
+            <h2>Learning - STEAM</h2>
             <PageIntro pageId={this.state.pageId}/>
-            <PostList pageId={this.state.pageId}/>
-            {/*<h5>Continuing Education</h5>
-        <h5>STEAM</h5>*/}
+            <PostView pageId={this.state.pageId}/>
           </div>
           <div className='right-column'></div>
         </div>

@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import Home from './screens/Home';
 import Make from './screens/Make';
 import Manage from './screens/Manage';
-import Design from './screens/Design';
+import Code from './screens/Code';
 import Steam from './screens/Steam';
 import About from './screens/About';
 import Admin from './screens/Admin';
@@ -28,8 +28,8 @@ class App extends Component {
                                     <Route exact path="/" component={Home} />
                                     <Route path="/make" component={Make} />
                                     <Route path="/manage" component={Manage} />
-                                    <Route path="/design" component={Design} />
-                                    <Route path="/steam" component={Steam} />
+                                    <Route path="/code" component={Code} />
+                                    <Route path="/learn" component={Steam} />
                                     <Route path="/about" component={About} />
                                     <Route path="/admin" component={Admin} />
                                 </Switch>

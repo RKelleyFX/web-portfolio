@@ -14,12 +14,6 @@ import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 class Admin extends Component {
   constructor(props) {
     super(props)
-    //this.state = { value: false }
-    //this.newTicketQuery = this.newTicketQuery.bind(this)
-  }
-
-  componentDidMount() {
-
   }
 
   render() {
