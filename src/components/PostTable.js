@@ -45,7 +45,6 @@ class PostTable extends React.Component {
 
         return (
             <div>
-
                 <Card>
                     <Card.Title as="h3">Posts</Card.Title>
                     <Card.Body>

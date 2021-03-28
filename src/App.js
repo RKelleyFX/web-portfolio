@@ -15,8 +15,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // Styling Imports
 import "./styles/App.css";
 
-
-
 class App extends Component {
     render() {
         return (

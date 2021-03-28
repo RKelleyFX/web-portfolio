@@ -22,7 +22,6 @@ function PageIntroMod () {
         const apiData = await API.graphql({ query: listPageIntros, variables: { filter: { page: { eq: formData.page } } } });
         setIntro(apiData.data.listPageIntros.items);
         setFormData(apiData.data.listPageIntros.items);
-        console.log(apiData.data.listPageIntros.items);  
     }
 
     async function updateIntro() {

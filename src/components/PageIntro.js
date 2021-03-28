@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import '../styles/style.css';
-import Icon from '../assets/icons/gear.png';
 
 import { API, Storage } from 'aws-amplify';
 import * as queries from '../graphql/queries';

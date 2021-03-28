@@ -3,14 +3,16 @@ import React, { Component } from 'react';
 import { API, Storage } from 'aws-amplify';
 import * as queries from '../graphql/queries';
 
+import MoreIcon from '../assets/icons/more.png'
 import '../styles/style.css';
 
 class PostAdd extends Component {
     constructor(props) {
         super(props)
-        this.state = { posts: [] }
-        //this.newTicketQuery = this.newTicketQuery.bind(this)
+        this.state = { posts: [], expand: false, viewId: 'blank' }
+        this.morePost = this.morePost.bind(this)
     }
+
 
     componentDidMount() {
         this.fetchPosts();
@@ -34,9 +36,39 @@ class PostAdd extends Component {
         }
     }
 
-    render() {
+    async morePost(event) {
+        if (this.state.expand === false) {
+            this.setState({ 
+                expand: true, 
+                viewId: event.target.name 
+            });
+        } else {
+            this.setState({
+                expand: false
+            })
+        }
+        console.log(this.state.viewId);
+    }
 
+    render() {
+        const expand = this.state.expand;
         const posts = this.state.posts;
+        const viewId = this.state.viewId;
+        let expandPost;
+
+        if (expand) {
+            expandPost = (
+                <div>
+                    Open
+                </div>
+            )
+        } else {
+            expandPost = (
+                <div> 
+                    Closed 
+                </div>
+            )
+        }
 
         return (
             <div>
@@ -62,6 +94,8 @@ class PostAdd extends Component {
                         </div>
                         <div id='post-body'>
                             <p>{p.body}</p>
+                            {/* <img id='moreIcon' src={MoreIcon} name={p.id} onClick={this.morePost} />
+                            {expandPost} */}
                         </div>
                     </div>
                 ))}

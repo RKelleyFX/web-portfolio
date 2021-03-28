@@ -38,7 +38,7 @@ function PostAdd() {
   }
   
     return (
-      <Card className="text-center" style={{ width: '24rem' }}>
+      <Card className="text-center" style={{ width: '50rem' }}>
       <Card.Body>
         <Form>
           <Form.Group controlId="exampleForm.ControlTextarea1">
@@ -47,11 +47,11 @@ function PostAdd() {
           </Form.Group>
           <Form.Group controlId="exampleForm.ControlTextarea2">
             <Form.Label>Post Intro</Form.Label>
-            <Form.Control as="textarea" rows="1" onChange={e => setFormData({ ...formData, 'intro': e.target.value })} value={formData.intro} />
+            <Form.Control as="textarea" rows="3" onChange={e => setFormData({ ...formData, 'intro': e.target.value })} value={formData.intro} />
           </Form.Group>
           <Form.Group controlId="exampleForm.ControlTextarea2">
             <Form.Label>Post Body</Form.Label>
-            <Form.Control as="textarea" rows="1" onChange={e => setFormData({ ...formData, 'body': e.target.value })} value={formData.body} />
+            <Form.Control as="textarea" rows="5" onChange={e => setFormData({ ...formData, 'body': e.target.value })} value={formData.body} />
           </Form.Group>
           <Form.Group controlId="exampleForm.ControlTextarea2">
             <Form.Label>Keywords</Form.Label>
