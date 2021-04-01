@@ -9,7 +9,7 @@ import '../styles/style.css';
 class PostAdd extends Component {
     constructor(props) {
         super(props)
-        this.state = { posts: [], expand: false, viewId: 'blank' }
+        this.state = { posts: [], expand: false, viewId: 'blank', postBody: ''}
         this.morePost = this.morePost.bind(this)
     }
 
@@ -36,37 +36,36 @@ class PostAdd extends Component {
         }
     }
 
-    async morePost(event) {
+    async morePost(body, event) {
         if (this.state.expand === false) {
             this.setState({ 
                 expand: true, 
-                viewId: event.target.name 
+                postBody: body,
+                viewId: event.target.name
             });
         } else {
             this.setState({
                 expand: false
             })
         }
-        console.log(this.state.viewId);
     }
 
     render() {
         const expand = this.state.expand;
         const posts = this.state.posts;
+        const postBody = this.state.postBody;
         const viewId = this.state.viewId;
         let expandPost;
 
         if (expand) {
             expandPost = (
                 <div>
-                    Open
+                   {postBody}
                 </div>
             )
         } else {
             expandPost = (
-                <div> 
-                    Closed 
-                </div>
+                <div></div>
             )
         }
 
@@ -78,7 +77,7 @@ class PostAdd extends Component {
 
                             <div className='post-content'>
                                 <div className="slideshow-container">
-                                    { p.attachment && <img id='post-img' src={p.attachment} /> }
+                                    { p.attachment && <img id='post-img' alt="Post Attachment" src={p.attachment} /> }
                                 </div>
                             </div>
 
@@ -90,12 +89,16 @@ class PostAdd extends Component {
                                     <p>{p.intro}</p>
                                 </div>
                             </div>
-
                         </div>
                         <div id='post-body'>
-                            <p>{p.body}</p>
-                            {/* <img id='moreIcon' src={MoreIcon} name={p.id} onClick={this.morePost} />
-                            {expandPost} */}
+                            <div>
+                                {
+                                    p.body !== ""
+                                    ? <img id='moreIcon' alt="More" src={MoreIcon} name={p.id} onClick={(e) => this.morePost(p.body, e)} />
+                                    : <div></div>
+                                }    
+                            </div>
+                            { p.id === viewId ? expandPost : "" }
                         </div>
                     </div>
                 ))}

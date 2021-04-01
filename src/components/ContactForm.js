@@ -35,7 +35,7 @@ function ContactForm() {
 
   return (
     <div>
-      <img id='contactIcon' src={ContactIcon} onClick={handleShow} />
+      <img id='contactIcon' alt="Contact Icon" src={ContactIcon} onClick={handleShow} />
 
       <Modal show={show} onHide={handleClose} size='med' animation={false}>
         <Modal.Body>

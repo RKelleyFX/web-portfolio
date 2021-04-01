@@ -43,7 +43,7 @@ class PageIntro extends Component {
 
     return (
       <div className='container'>
-        <img id='pageIcon' src={icon}></img>
+        <img id='pageIcon' alt="Page Icon" src={icon}></img>
         <p id='pageText'> {intro} </p>
       </div>
     )
