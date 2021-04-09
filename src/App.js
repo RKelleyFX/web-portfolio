@@ -8,6 +8,7 @@ import Code from './screens/Code';
 import Steam from './screens/Steam';
 import About from './screens/About';
 import Admin from './screens/Admin';
+import OFMSurvey from './screens/OFMKidSurvey.js';
 
 // Routing Imports
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -30,6 +31,7 @@ class App extends Component {
                                     <Route path="/learn" component={Steam} />
                                     <Route path="/about" component={About} />
                                     <Route path="/admin" component={Admin} />
+                                    <Route path="/survey-OFM" component={OFMSurvey} />
                                 </Switch>
                             </div>
                     </Router>
