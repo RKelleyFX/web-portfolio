@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import '../styles/style.css';
-import Icon from '../assets/icons/gear.png';
 
 import { API, Storage } from 'aws-amplify';
 import * as queries from '../graphql/queries';
@@ -44,7 +43,7 @@ class PageIntro extends Component {
 
     return (
       <div className='container'>
-        <img id='pageIcon' src={icon}></img>
+        <img id='pageIcon' alt="Page Icon" src={icon}></img>
         <p id='pageText'> {intro} </p>
       </div>
     )
