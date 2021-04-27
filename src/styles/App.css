@@ -8,7 +8,6 @@ body {
 /* Styling for the App Body */
 .App {
     display: flex;
-    width: 1200px;
     min-height: 800px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -20,5 +19,24 @@ body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+@media(min-width: 1200px) {
+    .App{
+        /* font-weight: bold; */
+        max-width: 1200px;
+        font-size: 1rem;
+    }
+}
 
+@media screen and (min-width: 577px) {
+    .App{
+        font-size: 1rem;
+        width: auto;
+    }
+}
 
+@media screen and (max-width: 576px) {
+    .App{
+        font-size: 1.5rem;
+        width: auto;
+    }
+}
