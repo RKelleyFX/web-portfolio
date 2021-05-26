@@ -110,3 +110,105 @@ export const listPortfolioPosts = /* GraphQL */ `
     }
   }
 `;
+export const getSurveyOfmParent = /* GraphQL */ `
+  query GetSurveyOfmParent($id: ID!) {
+    getSurveyOFMParent(id: $id) {
+      id
+      fName
+      lName
+      email
+      stem
+      education
+      spouse
+      college
+      tech
+      dream
+      dreamAge
+      children {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listSurveyOfmParents = /* GraphQL */ `
+  query ListSurveyOfmParents(
+    $filter: ModelSurveyOFMParentFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listSurveyOFMParents(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        fName
+        lName
+        email
+        stem
+        education
+        spouse
+        college
+        tech
+        dream
+        dreamAge
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getSurveyOfmChild = /* GraphQL */ `
+  query GetSurveyOfmChild($id: ID!) {
+    getSurveyOFMChild(id: $id) {
+      id
+      parentID
+      age
+      gender
+      activity
+      learnAge
+      parent {
+        id
+        fName
+        lName
+        email
+        stem
+        education
+        spouse
+        college
+        tech
+        dream
+        dreamAge
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listSurveyOfmChilds = /* GraphQL */ `
+  query ListSurveyOfmChilds(
+    $filter: ModelSurveyOFMChildFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listSurveyOFMChilds(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        parentID
+        age
+        gender
+        activity
+        learnAge
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;

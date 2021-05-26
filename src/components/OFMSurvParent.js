@@ -5,10 +5,24 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Row, Col } from 'react-bootstrap';
 
+import { API } from 'aws-amplify';
+import { createSurveyOfmParent as createParentMutation } from '../graphql/mutations.js';
+
 class OFMSurvParent extends Component {
     constructor(props) {
         super(props)
-        this.state = { stem: '', education: '', spouse: '', college: '', tech: '', dream: '', dreamAge: '' }
+        this.state = { 
+            fName: this.props.fName,
+            lName: this.props.lName,
+            email: this.props.email,
+            stem: '', 
+            education: '', 
+            spouse: '', 
+            college: '', 
+            tech: '', 
+            dream: '', 
+            dreamAge: '' 
+        }
         this.parentSubmit = this.parentSubmit.bind(this)
     }
 
@@ -16,21 +30,17 @@ class OFMSurvParent extends Component {
         console.log(this.props.fName, this.props.lName)
     }
 
-    parentSubmit(event) {
-        //console.log(this.state.stem, this.state.education, this.state.college)
+    async parentSubmit(event) {
+        try {
+            await API.graphql({ query: createParentMutation, variables: { input: this.state } });
+        } catch (err) {
+            console.log('Error saving parent info');
+            console.log(err);
+        }
+
         event.preventDefault()
         const { childCall } = this.props
         childCall()
-        
-        /*         try {
-                  await API.graphql({ query: createContactMutation, variables: { input: formData } });
-                  setContact([...contact, formData]);
-                  setFormData(initialFormState);
-                  handleClose();
-                } catch (err) {
-                  console.log('Error updating page intro');
-                  console.log(err);
-                } */
     }
 
     render() {
