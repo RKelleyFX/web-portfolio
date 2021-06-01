@@ -5,32 +5,52 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Row, Col } from 'react-bootstrap';
 
+import { API } from 'aws-amplify';
+import * as queries from '../graphql/queries';
+import { createSurveyOfmChild as createChildMutation } from '../graphql/mutations.js';
+
+
 class OFMSurvChild extends Component {
     constructor(props) {
         super(props)
-        this.state = { age: '', gender: '', activity: '', learnAge: '', childCount: 1}
-        this.contactSubmit = this.contactSubmit.bind(this)
+        this.state = { age: '', gender: '', activity: '', learnAge: '', parentID: '', childCount: 1}
+        this.childSubmit = this.childSubmit.bind(this)
     }
 
-    contactSubmit() {
+    componentDidMount() {
+        this.getParent();
+    }
+
+    //getSurveyOfmParent filter is not functioning properly / 
+
+    async getParent() {
+        try {
+            const apiData = await API.graphql({ query: queries.getSurveyOfmParent, variables: { filter: { email: { eq: this.props.email } } } });
+            const parentFromAPI = apiData.data.listSurveyOfmParents.items;                          
+            this.setState({ parentID: parentFromAPI.id });
+            console.log(parentFromAPI);
+        } catch (err) {
+            console.log('Error fetching portfolio post');
+            console.log(err);
+            console.log('Parent ID: ' + this.state.parentID );
+        }
+    }
+
+    async childSubmit() {
         if (this.state.childCount < this.props.children) {
             let count = this.state.childCount
             this.setState({ childCount: (count + 1) })
         }
-        if (this.state.childCount == this.props.children) {
+        if (this.state.childCount === this.props.children) {
             console.log("Submit Children")
         }
 
-
-        /*         try {
-                  await API.graphql({ query: createContactMutation, variables: { input: formData } });
-                  setContact([...contact, formData]);
-                  setFormData(initialFormState);
-                  handleClose();
-                } catch (err) {
-                  console.log('Error updating page intro');
-                  console.log(err);
-                } */
+        try {
+            await API.graphql({ query: createChildMutation, variables: { input: this.state } });
+        } catch (err) {
+            console.log('Error creating child');
+            console.log(err);
+        } 
     }
 
     render() {
@@ -243,7 +263,7 @@ class OFMSurvChild extends Component {
                                                     </Col>
                                                 </Row>
                                             </Form.Group>
-                                            <Button variant="primary" onClick={this.contactSubmit}>
+                                            <Button variant="primary" onClick={this.childSubmit}>
                                                 Complete
                                             </Button>
                                         </Form>

@@ -26,3 +26,29 @@ type PortfolioPost @model @auth(rules: [{ allow: public, provider: iam }]){
   attachment: String
   archive: Boolean!
 }
+
+type SurveyOFMParent @model
+  @auth(rules: [{ allow: public, provider: iam }]){
+  id: ID
+  fName: String!
+  lName: String!
+  email: String!
+  stem: String!
+  education: String!
+  spouse: String!
+  college: String!
+  tech: String!
+  dream: String!
+  dreamAge: String!
+  children: [SurveyOFMChild] @connection(keyName: "ParentChild", fields: ["id"])
+}
+
+type SurveyOFMChild @model
+  @auth(rules: [{ allow: public, provider: iam }])
+  @key(name: "ParentChild", fields: ["parentID", "age"]){
+  id: ID
+  age: String!
+  gender: String!
+  activity: String!
+  learnAge: String!
+}

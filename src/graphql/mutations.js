@@ -160,3 +160,174 @@ export const deletePortfolioPost = /* GraphQL */ `
     }
   }
 `;
+export const createSurveyOfmParent = /* GraphQL */ `
+  mutation CreateSurveyOfmParent(
+    $input: CreateSurveyOFMParentInput!
+    $condition: ModelSurveyOFMParentConditionInput
+  ) {
+    createSurveyOFMParent(input: $input, condition: $condition) {
+      id
+      fName
+      lName
+      email
+      stem
+      education
+      spouse
+      college
+      tech
+      dream
+      dreamAge
+      children {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateSurveyOfmParent = /* GraphQL */ `
+  mutation UpdateSurveyOfmParent(
+    $input: UpdateSurveyOFMParentInput!
+    $condition: ModelSurveyOFMParentConditionInput
+  ) {
+    updateSurveyOFMParent(input: $input, condition: $condition) {
+      id
+      fName
+      lName
+      email
+      stem
+      education
+      spouse
+      college
+      tech
+      dream
+      dreamAge
+      children {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteSurveyOfmParent = /* GraphQL */ `
+  mutation DeleteSurveyOfmParent(
+    $input: DeleteSurveyOFMParentInput!
+    $condition: ModelSurveyOFMParentConditionInput
+  ) {
+    deleteSurveyOFMParent(input: $input, condition: $condition) {
+      id
+      fName
+      lName
+      email
+      stem
+      education
+      spouse
+      college
+      tech
+      dream
+      dreamAge
+      children {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createSurveyOfmChild = /* GraphQL */ `
+  mutation CreateSurveyOfmChild(
+    $input: CreateSurveyOFMChildInput!
+    $condition: ModelSurveyOFMChildConditionInput
+  ) {
+    createSurveyOFMChild(input: $input, condition: $condition) {
+      id
+      parentID
+      age
+      gender
+      activity
+      learnAge
+      parent {
+        id
+        fName
+        lName
+        email
+        stem
+        education
+        spouse
+        college
+        tech
+        dream
+        dreamAge
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateSurveyOfmChild = /* GraphQL */ `
+  mutation UpdateSurveyOfmChild(
+    $input: UpdateSurveyOFMChildInput!
+    $condition: ModelSurveyOFMChildConditionInput
+  ) {
+    updateSurveyOFMChild(input: $input, condition: $condition) {
+      id
+      parentID
+      age
+      gender
+      activity
+      learnAge
+      parent {
+        id
+        fName
+        lName
+        email
+        stem
+        education
+        spouse
+        college
+        tech
+        dream
+        dreamAge
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteSurveyOfmChild = /* GraphQL */ `
+  mutation DeleteSurveyOfmChild(
+    $input: DeleteSurveyOFMChildInput!
+    $condition: ModelSurveyOFMChildConditionInput
+  ) {
+    deleteSurveyOFMChild(input: $input, condition: $condition) {
+      id
+      parentID
+      age
+      gender
+      activity
+      learnAge
+      parent {
+        id
+        fName
+        lName
+        email
+        stem
+        education
+        spouse
+        college
+        tech
+        dream
+        dreamAge
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;

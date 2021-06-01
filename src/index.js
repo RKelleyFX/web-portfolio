@@ -4,7 +4,7 @@ import * as serviceWorker from './serviceWorker';
 
 // Redux Store Imports
 import { createStore } from 'redux';
-import reducer from './reducers/navigation';
+import reducerNav from './reducers/navigation';
 import { Provider } from 'react-redux';
 
 // Routing Imports
@@ -24,7 +24,7 @@ Amplify.configure(config);
 
 /************************REDUX STORE*********************** */
 const store = createStore(
-    reducer,
+    reducerNav,
     undefined
 );
 

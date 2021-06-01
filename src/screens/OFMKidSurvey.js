@@ -79,7 +79,7 @@ class OFMSurvey extends Component {
             renderCard = (<OFMSurvParent fName={this.state.fName} lName={this.state.lName} email={this.state.email} childCall={this.childCard}/>)
         }
         if (this.state.childInfo) {
-            renderCard = (<OFMSurvChild children={this.state.children} />)
+            renderCard = (<OFMSurvChild email={this.state.email} children={this.state.children} />)
         }
 
         return (

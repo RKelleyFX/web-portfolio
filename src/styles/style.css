@@ -175,9 +175,10 @@
 }
 
 #post-img {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
+    width: 95%;
+    padding: 3px;
+    margin: 5px;
+    box-shadow:1px 1px 1px 1px rgba(0, 0, 0, 0.600)
 }
 
 #post-title {
