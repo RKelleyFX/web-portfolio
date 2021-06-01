@@ -1,19 +1,31 @@
-import { NAVI_LOCATION } from '../actions/actions'
+import { NAVI_LOCATION, PARENT_INFO, CHILD_TOGGLE } from '../actions/actions'
 
 const initialState = {
-    navPage: "nav page"
+    navPage: "nav page",
+    fName: "first name",
+    lName: "last name",
+    email: "email",
+    children: "# of children",
+    childToggle: "false"
 };
 
 function navigationReducer(state = initialState, { type, payload }) {
     switch (type) {
-        // case DEFINE_USER_DETAIL:
-        //     return {
-        //         ...state,
-        //         updateEmail: payload.email,
-        //         updatePassword: payload.password,
-        //         updatePhone: payload.phone
-        //     };
-
+        case PARENT_INFO:
+            return {
+                ...state,
+                fName: payload.fName,
+                lName: payload.lName,
+                email: payload.email,
+                children: payload.children
+            };
+    
+        case CHILD_TOGGLE:
+            return {
+                ...state,
+                childTottle: payload.childToggle
+            };
+        
         case NAVI_LOCATION:
             return {
                 ...state,

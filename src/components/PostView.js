@@ -6,7 +6,7 @@ import * as queries from '../graphql/queries';
 import MoreIcon from '../assets/icons/more.png'
 import '../styles/style.css';
 
-class PostAdd extends Component {
+class PostView extends Component {
     constructor(props) {
         super(props)
         this.state = { posts: [], expand: false, viewId: 'blank', postBody: ''}
@@ -107,4 +107,4 @@ class PostAdd extends Component {
     }
 };
 
-export default PostAdd;
+export default PostView;

@@ -47,10 +47,8 @@ type SurveyOFMChild @model
   @auth(rules: [{ allow: public, provider: iam }])
   @key(name: "ParentChild", fields: ["parentID", "age"]){
   id: ID
-  parentID: ID!
   age: String!
   gender: String!
   activity: String!
   learnAge: String!
-  parent: SurveyOFMParent @connection(fields: ["parentID"])
 }
